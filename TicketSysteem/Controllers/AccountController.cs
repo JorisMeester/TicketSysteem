@@ -151,7 +151,7 @@ namespace TicketSysteem.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Klantnummer = model.Klantnummer, Voornaam = model.Voornaam, Tussenvoegsel = model.Tussenvoegsel, Achternaam = model.Achternaam, Telefoonnummer = model.Telefoonnummer, Email = model.Email};
+                var user = new ApplicationUser { UserName = model.Email, CustomerNumber = model.CustomerNumber, FirstName = model.FirstName, Prefix = model.Prefix, LastName = model.LastName, PhoneNumber = model.PhoneNumber, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password)/* SeanJensen123! */;
                 if (result.Succeeded)
                 {

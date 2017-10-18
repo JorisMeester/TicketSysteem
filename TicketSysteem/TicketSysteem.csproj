@@ -204,11 +204,20 @@
     <Compile Include="Migrations\201709221316388_migratie.Designer.cs">
       <DependentUpon>201709221316388_migratie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710182129210_blep.cs" />
+    <Compile Include="Migrations\201710182129210_blep.Designer.cs">
+      <DependentUpon>201710182129210_blep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710182145526_blop.cs" />
+    <Compile Include="Migrations\201710182145526_blop.Designer.cs">
+      <DependentUpon>201710182145526_blop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TicketReply.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -297,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709221316388_migratie.resx">
       <DependentUpon>201709221316388_migratie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710182129210_blep.resx">
+      <DependentUpon>201710182129210_blep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710182145526_blop.resx">
+      <DependentUpon>201710182145526_blop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

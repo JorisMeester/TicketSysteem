@@ -17,11 +17,11 @@ namespace TicketSysteem.Models
             return userIdentity;
         }
 
-        public int Klantnummer { get; set; }
-        public string Voornaam { get; set; }
-        public string Tussenvoegsel { get; set; }
-        public string Achternaam { get; set; }
-        public string Telefoonnummer { get; set; }
+        public int CustomerNumber { get; set; }
+        public string FirstName { get; set; }
+        public string Prefix { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

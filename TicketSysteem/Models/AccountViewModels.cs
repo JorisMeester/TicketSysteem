@@ -65,22 +65,22 @@ namespace TicketSysteem.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display (Name = "Klantnummer")]
-        public int Klantnummer { get; set; }
+        [Display (Name = "CustomerNumber")]
+        public int CustomerNumber { get; set; }
 
         [Required]
-        [Display (Name = "Voornaam")]
-        public string Voornaam { get; set; }
+        [Display (Name = "FirstName")]
+        public string FirstName { get; set; }
 
-        [Display(Name = "Tussenvoegsel")]
-        public string Tussenvoegsel { get; set; }
+        [Display(Name = "Prefix")]
+        public string Prefix { get; set; }
 
         [Required]
-        [Display(Name = "Achternaam")]
-        public string Achternaam { get; set; }
+        [Display(Name = "LastName")]
+        public string LastName { get; set; }
 
-        [Display(Name = "Telefoonnummer")]
-        public string Telefoonnummer { get; set; }
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [EmailAddress]

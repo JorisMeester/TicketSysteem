@@ -7,19 +7,20 @@ namespace TicketSysteem.Models
 {
     public class Ticket
     {
-        public int ID { get; set; }
-        public ApplicationUser Klant { get; set; }
-        public string Applicatie { get; set; }
-        public string Onderwerp { get; set; }
-        public string Omschrijving { get; set; }
-        public DateTime Datum { get; set; }
+        public int Id { get; set; }
+        public ApplicationUser Customer { get; set; }
+        public string Application { get; set; }
+        public string Subject { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
+        public TicketReply Replies { get; set; }
         public StatusEnum Status { get; set; }
     }
 
     public enum StatusEnum
     {
-        Nieuw,
-        InBehandeling,
-        Afgehandeld
+        New,
+        Processing,
+        Resolved
     }
 }

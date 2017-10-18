@@ -55,9 +55,9 @@ namespace TicketSysteem.Controllers
                 var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var currentUser = manager.FindById(User.Identity.GetUserId());
 
-                ticket.Klant = currentUser;
-                ticket.Datum = DateTime.Now;
-                ticket.Status = StatusEnum.Nieuw;
+                ticket.Customer = currentUser;
+                ticket.Date = DateTime.Now;
+                ticket.Status = StatusEnum.New;
                 db.Tickets.Add(ticket);
                 db.SaveChanges();
                 return RedirectToAction("Index");
