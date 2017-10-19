@@ -1,0 +1,18 @@
+﻿@model TicketSysteem.Models.TicketReply
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Add Reply</h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reply, htmlAttributes: new { })
+        @Html.EditorFor(model => model.Reply, new { htmlAttributes = new { @class = "form-control"} })
+        @Html.ValidationMessageFor(model => model.Reply, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add reply" class="btn btn-primary"/>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")    
+}

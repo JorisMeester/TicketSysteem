@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TicketSysteem.Models.TicketReply>
+@foreach (var item in Model) {
+
+<div class="replybox">
+    <h4>@Html.DisplayFor(model => model.Replies.User) op @Html.DisplayFor(model => model.Replies.Date)  </h4>
+    <p>@Html.DisplayFor(model => model.Replies.Reply)</p>
+</div>
+}

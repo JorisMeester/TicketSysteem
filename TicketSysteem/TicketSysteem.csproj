@@ -283,6 +283,8 @@
     <Content Include="Views\Tickets\Delete.cshtml" />
     <Content Include="Views\Tickets\Create.cshtml" />
     <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\ListReplies.cshtml" />
+    <Content Include="Views\Tickets\CreateReply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

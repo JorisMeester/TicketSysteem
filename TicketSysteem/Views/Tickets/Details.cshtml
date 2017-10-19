@@ -7,11 +7,13 @@
 <h2>@Html.DisplayFor(model => model.Application)</h2>
 <h2>@Html.DisplayFor(model => model.Subject)</h2>
 
-<h3
+<h3>@Html.DisplayFor(model => model.Customer) op @Html.DisplayFor(model => model.Date)  </h3>
+
+<h4>Status: @Html.DisplayFor(model => model.Status)</h4>
 <div>
-    <h4>@Html.DisplayFor(model => model.Subject)</h4>
-    <hr />
-    <dl class="dl-horizontal">
+    <hr/>
+    <p>@Html.DisplayFor(model => model.Description)</p>
+    @*<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Application)
         </dt>
@@ -60,9 +62,15 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
 
-    </dl>
+    </dl>*@
 </div>
+@Html.Partial("ListReplies")
+@if (User.IsInRole("Admin"))
+{
+    @Html.Partial("CreateReply", new TicketSysteem.Models.TicketReply())
+}
 <p>
+
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
