@@ -15,6 +15,12 @@ namespace TicketSysteem.Models
         public DateTime Date { get; set; }
         public TicketReply Replies { get; set; }
         public StatusEnum Status { get; set; }
+
+        public Ticket()
+        {
+            Date = DateTime.Now;
+            Status = StatusEnum.New;
+        }
     }
 
     public enum StatusEnum

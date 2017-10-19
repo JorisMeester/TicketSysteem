@@ -12,6 +12,7 @@ using TicketSysteem.Models;
 
 namespace TicketSysteem.Controllers
 {
+    [Authorize]
     public class TicketsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -19,7 +20,13 @@ namespace TicketSysteem.Controllers
         // GET: Tickets
         public ActionResult Index()
         {
-            return View(db.Tickets.ToList());
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            if (User.IsInRole("Admin"))
+            {
+                return View(db.Tickets.ToList());
+            }
+            return View(db.Tickets.Where(x => x.Customer.Id == currentUser.Id).ToList());
         }
 
         // GET: Tickets/Details/5
@@ -48,7 +55,7 @@ namespace TicketSysteem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Applicatie,Onderwerp,Omschrijving,Datum,Status")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Application,Subject,Description,Date,Status")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +93,7 @@ namespace TicketSysteem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Applicatie,Onderwerp,Omschrijving,Datum,Status")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "Id,Application,Subject,Description,Date,Status")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
