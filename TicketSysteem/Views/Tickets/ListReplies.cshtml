@@ -2,7 +2,7 @@
 @foreach (var item in Model) {
 
 <div class="replybox">
-    <h4>@Html.DisplayFor(model => model.Replies.User) op @Html.DisplayFor(model => model.Replies.Date)  </h4>
-    <p>@Html.DisplayFor(model => model.Replies.Reply)</p>
+    <h4>@item.User.UserName op @item.Date  </h4>
+    <p>@item.Reply)</p>
 </div>
 }
