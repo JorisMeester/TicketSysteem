@@ -37,5 +37,6 @@ namespace TicketSysteem.Models
         }
 
         public System.Data.Entity.DbSet<TicketSysteem.Models.Ticket> Tickets { get; set; }
+
     }
 }
